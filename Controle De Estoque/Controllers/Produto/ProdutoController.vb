@@ -50,7 +50,7 @@ Public Class ProdutoController
 
             If produtoQuantidade > produto.estoque_minimo Then
                 produto.status = "Estoque confortável"
-            ElseIf produtoQuantidade < produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
+            ElseIf produtoQuantidade <= produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
                 produto.status = "Estoque perigoso"
             ElseIf produtoQuantidade = 0 Then
                 produto.status = "Sem estoque"
@@ -72,7 +72,7 @@ Public Class ProdutoController
             Else
                 If produtoQuantidade > produto.estoque_minimo Then
                     produto.status = "Estoque confortável"
-                ElseIf produtoQuantidade < produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
+                ElseIf produtoQuantidade <= produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
                     produto.status = "Estoque perigoso"
                 ElseIf produtoQuantidade = 0 Then
                     produto.status = "Sem estoque"

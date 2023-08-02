@@ -159,16 +159,18 @@ Partial Class CadastrarProduto
         'NumericUpDown1
         '
         Me.NumericUpDown1.Location = New System.Drawing.Point(13, 207)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(325, 20)
-        Me.NumericUpDown1.TabIndex = 24
+        Me.NumericUpDown1.TabIndex = 17
         '
         'NumericUpDown2
         '
         Me.NumericUpDown2.Location = New System.Drawing.Point(13, 255)
+        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(325, 20)
-        Me.NumericUpDown2.TabIndex = 25
+        Me.NumericUpDown2.TabIndex = 18
         '
         'CadastrarProduto
         '
@@ -192,6 +194,7 @@ Partial Class CadastrarProduto
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "CadastrarProduto"
         Me.Text = "CadastrarProduto"
         Me.Panel1.ResumeLayout(False)

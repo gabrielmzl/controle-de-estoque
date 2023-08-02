@@ -64,7 +64,7 @@
 
             If produtoqtd > estoquemin Then
                 status = "Estoque confortável"
-            ElseIf produtoqtd < estoquemin AndAlso produtoqtd > 0 Then
+            ElseIf produtoqtd <= estoquemin AndAlso produtoqtd > 0 Then
                 status = "Estoque perigoso"
             ElseIf produtoqtd = 0 Then
                 status = "Sem estoque"
@@ -91,5 +91,9 @@
                 MessageBox.Show("Ocorreu um erro ao excluir o produto, tente novamente mais tarde...", "Erro")
             End Try
         End If
+    End Sub
+
+    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
+
     End Sub
 End Class

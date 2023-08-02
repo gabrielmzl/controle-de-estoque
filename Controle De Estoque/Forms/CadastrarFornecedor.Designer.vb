@@ -150,6 +150,7 @@ Partial Class CadastrarFornecedor
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "CadastrarFornecedor"
         Me.Text = "Cadastrar Fornecedor"
         Me.Panel1.ResumeLayout(False)

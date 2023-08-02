@@ -169,6 +169,7 @@ Partial Class EditarProduto
         'NumericUpDown1
         '
         Me.NumericUpDown1.Location = New System.Drawing.Point(12, 210)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(326, 20)
         Me.NumericUpDown1.TabIndex = 39
@@ -176,6 +177,7 @@ Partial Class EditarProduto
         'NumericUpDown2
         '
         Me.NumericUpDown2.Location = New System.Drawing.Point(13, 260)
+        Me.NumericUpDown2.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumericUpDown2.Name = "NumericUpDown2"
         Me.NumericUpDown2.Size = New System.Drawing.Size(325, 20)
         Me.NumericUpDown2.TabIndex = 40
@@ -203,6 +205,7 @@ Partial Class EditarProduto
         Me.Controls.Add(Me.TextBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "EditarProduto"
         Me.Text = "EditarProduto"
         Me.Panel1.ResumeLayout(False)

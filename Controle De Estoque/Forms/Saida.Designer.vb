@@ -55,6 +55,7 @@ Partial Class Saida
         'NumericUpDown1
         '
         Me.NumericUpDown1.Location = New System.Drawing.Point(12, 171)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10000, 0, 0, 0})
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(164, 20)
         Me.NumericUpDown1.TabIndex = 22
@@ -110,6 +111,7 @@ Partial Class Saida
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Saida"
         Me.Text = "Saida"
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()

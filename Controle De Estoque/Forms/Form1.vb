@@ -14,10 +14,10 @@
             dataGridViewProdutos.Columns(1).HeaderText = "Nome"
             dataGridViewProdutos.Columns(2).HeaderText = "Marca"
             dataGridViewProdutos.Columns(3).HeaderText = "Quantidade"
-            dataGridViewProdutos.Columns(4).HeaderText = "Estoque Minimo"
+            dataGridViewProdutos.Columns(4).HeaderText = "Est. Min."
             dataGridViewProdutos.Columns(5).HeaderText = "Status"
             dataGridViewProdutos.Columns(6).HeaderText = "Preço"
-            dataGridViewProdutos.Columns(7).HeaderText = "Fornecedor ID"
+            dataGridViewProdutos.Columns(7).HeaderText = "Fornecedor"
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar produtos, tente novamente mais tarde...", "Erro")
             Close()

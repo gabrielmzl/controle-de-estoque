@@ -25,7 +25,7 @@
 
         If quantidadeProduto > estoqueMinimo Then
             status = "Estoque confortável"
-        ElseIf quantidadeProduto < estoqueMinimo AndAlso quantidadeProduto > 0 Then
+        ElseIf quantidadeProduto <= estoqueMinimo AndAlso quantidadeProduto > 0 Then
             status = "Estoque perigoso"
         ElseIf quantidadeProduto = 0 Then
             status = "Sem estoque"

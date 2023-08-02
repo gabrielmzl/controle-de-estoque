@@ -123,7 +123,7 @@ Partial Class Form1
         Me.dataGridViewProdutos.AllowUserToDeleteRows = False
         Me.dataGridViewProdutos.AllowUserToResizeColumns = False
         Me.dataGridViewProdutos.AllowUserToResizeRows = False
-        Me.dataGridViewProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dataGridViewProdutos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dataGridViewProdutos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(232, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.dataGridViewProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -165,6 +165,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Controle de Estoque"
         Me.Panel1.ResumeLayout(False)
