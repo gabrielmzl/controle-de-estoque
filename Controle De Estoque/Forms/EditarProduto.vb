@@ -59,13 +59,14 @@
 
             Dim status As String = "Valor inválido."
 
-            MessageBox.Show(produtoEditado.quantidade & produtoEditado.estoque_minimo)
+            Dim produtoqtd As Integer = produtoEditado.quantidade
+            Dim estoquemin As Integer = produtoEditado.estoque_minimo
 
-            If produtoEditado.quantidade > produtoEditado.estoque_minimo Then
+            If produtoqtd > estoquemin Then
                 status = "Estoque confortável"
-            ElseIf produtoEditado.quantidade > 0 AndAlso produtoEditado.quantidade < produtoEditado.estoque_minimo Then
+            ElseIf produtoqtd < estoquemin AndAlso produtoqtd > 0 Then
                 status = "Estoque perigoso"
-            ElseIf produtoEditado.quantidade = 0 Then
+            ElseIf produtoqtd = 0 Then
                 status = "Sem estoque"
             End If
 
