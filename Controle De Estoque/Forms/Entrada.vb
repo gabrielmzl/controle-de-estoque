@@ -25,8 +25,6 @@
             produtoC.Entrada(Id, NumericUpDown1.Value)
             MessageBox.Show("Entrada adicionada com sucesso!", "Sucesso")
             Close()
-            Dim form As New Form1()
-            form.CarregarProdutos()
         Catch ex As Exception
             MessageBox.Show("Erro ao cadastrar entrada, tente novamente mais tarde...", "Erro")
         End Try

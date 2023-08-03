@@ -21,15 +21,7 @@
         Dim estoqueMinimo = NumericUpDown2.Value
         Dim precoProduto = TextBox5.Text
         Dim fornecedorId = ListBox1.GetItemText(ListBox1.SelectedValue)
-        Dim status As String = "Valor inválido."
-
-        If quantidadeProduto > estoqueMinimo Then
-            status = "Estoque confortável"
-        ElseIf quantidadeProduto <= estoqueMinimo AndAlso quantidadeProduto > 0 Then
-            status = "Estoque perigoso"
-        ElseIf quantidadeProduto = 0 Then
-            status = "Sem estoque"
-        End If
+        Dim status = produto.VerificaStatus(quantidadeProduto, estoqueMinimo)
 
         Try
             Dim novoProduto As New Produto() With {

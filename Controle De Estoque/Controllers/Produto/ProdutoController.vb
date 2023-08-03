@@ -48,13 +48,8 @@ Public Class ProdutoController
             Dim produtoQuantidade = produto.quantidade + novaQuantidade
             produto.quantidade = produto.quantidade + novaQuantidade
 
-            If produtoQuantidade > produto.estoque_minimo Then
-                produto.status = "Estoque confortável"
-            ElseIf produtoQuantidade <= produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
-                produto.status = "Estoque perigoso"
-            ElseIf produtoQuantidade = 0 Then
-                produto.status = "Sem estoque"
-            End If
+            Dim status = VerificaStatus(produtoQuantidade, produto.estoque_minimo)
+            produto.status = status
 
             contexto.SaveChanges()
         End Using
@@ -70,17 +65,22 @@ Public Class ProdutoController
                 MessageBox.Show("Não é possivel dar saida e deixar o valor < 0.", "Erro")
                 Return
             Else
-                If produtoQuantidade > produto.estoque_minimo Then
-                    produto.status = "Estoque confortável"
-                ElseIf produtoQuantidade <= produto.estoque_minimo AndAlso produtoQuantidade > 0 Then
-                    produto.status = "Estoque perigoso"
-                ElseIf produtoQuantidade = 0 Then
-                    produto.status = "Sem estoque"
-                End If
+                Dim status = VerificaStatus(produtoQuantidade, produto.estoque_minimo)
+                produto.status = status
 
                 contexto.SaveChanges()
             End If
 
         End Using
     End Sub
+
+    Public Function VerificaStatus(produtoQuantidade As Integer, estoqueMinimo As Integer)
+        If produtoQuantidade = 0 Then
+            Return "Sem estoque"
+        ElseIf produtoQuantidade <= estoqueMinimo AndAlso produtoQuantidade > 0 Then
+            Return "Estoque perigoso"
+        Else
+            Return "Estoque confortável"
+        End If
+    End Function
 End Class

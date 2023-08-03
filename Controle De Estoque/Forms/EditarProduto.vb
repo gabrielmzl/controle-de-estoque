@@ -50,6 +50,9 @@
             Dim produto = produtoC.BuscarPorId(Id)
 
             Dim produtoEditado As Produto = produto
+            Dim produtoQuantidade As Integer = produtoEditado.quantidade
+            Dim estoqueMinimo As Integer = produtoEditado.estoque_minimo
+
             produtoEditado.nome = TextBox1.Text
             produtoEditado.marca = TextBox2.Text
             produtoEditado.quantidade = NumericUpDown1.Value
@@ -57,18 +60,7 @@
             produtoEditado.preco = TextBox5.Text
             produtoEditado.fornecedor_id = ListBox1.GetItemText(ListBox1.SelectedValue)
 
-            Dim status As String = "Valor inválido."
-
-            Dim produtoqtd As Integer = produtoEditado.quantidade
-            Dim estoquemin As Integer = produtoEditado.estoque_minimo
-
-            If produtoqtd > estoquemin Then
-                status = "Estoque confortável"
-            ElseIf produtoqtd <= estoquemin AndAlso produtoqtd > 0 Then
-                status = "Estoque perigoso"
-            ElseIf produtoqtd = 0 Then
-                status = "Sem estoque"
-            End If
+            Dim status = produtoC.VerificaStatus(produtoQuantidade, estoqueMinimo)
 
             produtoEditado.status = status
             produtoC.Atualizar(produtoEditado)
@@ -91,9 +83,5 @@
                 MessageBox.Show("Ocorreu um erro ao excluir o produto, tente novamente mais tarde...", "Erro")
             End Try
         End If
-    End Sub
-
-    Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
-
     End Sub
 End Class
